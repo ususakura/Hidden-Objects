@@ -51,13 +51,15 @@ public class GameController : MonoBehaviour
                     Debug.Log("Marry me!");
                     score++;
                     kissSound.Play();
-                    scoreText.text = "[tonight groom counts: " + score + "]";
+                    scoreText.text = "Tonight groom counts: " + score + "";
+                    Destroy(clickedObject.gameObject);
 
                     if (remainingGrooms.Count == 0)
                     {
                         Debug.Log("Night is over!");
                         titleText.text = "Good night";
                         scoreText.gameObject.SetActive(false);
+                        promptImg.gameObject.SetActive(false);
                         gameEnded = true;
                     }else
                     {
